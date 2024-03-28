@@ -11,21 +11,16 @@ spec:
     name: ''
     namespace: default
     server: 'https://kubernetes.default.svc'
-  source:
-    - name: infra
-        repoURL: 'https://github.com/fdaluisio/infra-repo.git'
-        path: randomquotes-java
+  sources:
+    - repoURL: 'https://github.com/fdaluisio/infra-repo.git'
+      path: mynginx
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+          - values.yaml
+    - repoURL: 'https://github.com/fdaluisio/config-repo.git'
+        path: mynginx
         targetRevision: HEAD
-        helm:
-          valueFiles:
-            - values.yaml
-    - name: config
-        repoURL: 'https://github.com/fdaluisio/config-repo.git'
-        path:
-        targetRevision: HEAD
-        helm:
-          valueFiles:
-            - values.yaml
   syncPolicy: {}
     syncOptions:
       - CreateNamespace=true
