@@ -19,6 +19,6 @@ spec:
         valueFiles:
           - values.yaml
     - repoURL: 'https://github.com/fdaluisio/config-repo.git'
-      path: mynginx/configmap-svil.yaml
+      path: mynginx-svil
       targetRevision: HEAD
   syncPolicy: {}

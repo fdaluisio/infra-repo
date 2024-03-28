@@ -19,6 +19,6 @@ spec:
         valueFiles:
           - values.yaml
     - repoURL: 'https://github.com/fdaluisio/config-repo.git'
-      path: mynginx/configmap-valid.yaml
+      path: mynginx-valid
       targetRevision: HEAD
   syncPolicy: {}
