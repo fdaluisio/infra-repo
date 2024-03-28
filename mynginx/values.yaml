@@ -81,5 +81,5 @@ tolerations: []
 
 affinity: {}
 
-config-cm:
+config_cm:
   enabled: true

@@ -33,7 +33,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-      {{- if .Values.config-cm.enabled }}
+      {{- if .Values.config_cm.enabled }}
           volumeMounts:
             - name: volume-config-cm
               mountPath: /config
@@ -56,7 +56,7 @@ spec:
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- if .Values.config-cm.enabled }}
+      {{- if .Values.config_cm.enabled }}
       volumes:
       - name: volume-config-cm
         configMap:
