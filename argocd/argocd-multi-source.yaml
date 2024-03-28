@@ -19,8 +19,6 @@ spec:
         valueFiles:
           - values.yaml
     - repoURL: 'https://github.com/fdaluisio/config-repo.git'
-        path: mynginx
-        targetRevision: HEAD
+      path: mynginx
+      targetRevision: HEAD
   syncPolicy: {}
-    syncOptions:
-      - CreateNamespace=true
