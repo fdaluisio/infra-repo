@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mynginx
+  name: mynginx-valid
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,7 +10,7 @@ spec:
   destination:
     name: ''
     namespace: default
-    server: 'https://kubernetes.default.svc'
+    server: 'https://192.168.11.167:6444'
   sources:
     - repoURL: 'https://github.com/fdaluisio/infra-repo.git'
       path: mynginx
@@ -19,6 +19,6 @@ spec:
         valueFiles:
           - values.yaml
     - repoURL: 'https://github.com/fdaluisio/config-repo.git'
-      path: mynginx/configmap-svil.yaml
+      path: mynginx/configmap-valid.yaml
       targetRevision: HEAD
   syncPolicy: {}
