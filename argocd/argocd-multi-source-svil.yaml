@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mynginx
+  name: mynginx-svil
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,7 +10,7 @@ spec:
   destination:
     name: ''
     namespace: default
-    server: 'https://kubernetes.default.svc'
+    server: 'https://192.168.11.167:6444'
   sources:
     - repoURL: 'https://github.com/fdaluisio/infra-repo.git'
       path: mynginx
